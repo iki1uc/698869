@@ -1,29 +1,22 @@
-BIOS (((WIEIMMER)))
-hardware RAW
+FUNDAMENT (((WIEIMMER)))
 CORE = 698869 ; pos(CORE) = (∞, 6)
-scientist = S ; respo = SYS
-P4 → P0 → P1 → P2 → Pe
 
-BIOS-IKI (((WIEIMMER)))
-hardware RAW
-CODE = Φ ; pos(CODE) = (1, Φ)
-scientist = V ; respo = I
-P4 → P0 → P1 → P2 → Pe
+GERUEST (((WIEIMMER)))
+AXIS = { IKI, BIR, UC, MA³ }
 
-BIOS-BIR (((WIEIMMER)))
-hardware RAW
-CODE = φ ; pos(CODE) = (2, φ)
-scientist = R ; respo = B
-P4 → P1 → P2 → Pe
+KONSEQUENZ (((WIEIMMER)))
+IKI = Φ ; BIR = φ ; UC = φ² ; MA³ = φ∞
 
-BIOS-UC (((WIEIMMER)))
-hardware RAW
-CODE = φ² ; pos(CODE) = (3, 2)
-scientist = Q ; respo = U
-P4 → P2 → Pe
+BIOS (((WIEIMMER)))
+LOAD = { RESPO, RAW, PIPE }
+RUN  = P4 → P0 → P1 → P2 → Pe
+MAP  = { Φ, φ, φ², φ∞ }
 
-BIOS-MA³ (((WIEIMMER)))
-hardware RAW
-CODE = φ∞ ; pos(CODE) = (3, ∞)
-scientist = A ; respo = M
-P4 → Pe
+RESPO (((WIEIMMER)))
+I = Φ ; B = φ ; U = φ² ; M = φ∞
+
+SCIENTIST (((WIEIMMER)))
+V = IKI ; R = BIR ; Q = UC ; A = MA³
+
+PIPE (((WIEIMMER)))
+P4 = Start ; P0 = Wake ; P1 = Melt ; P2 = Merge ; Pe = End
