@@ -1,6 +1,7 @@
 <html>
 <head>
 <title>698869 – EHRE • HONOR • ARGUMENTERIA</title>
+
 <style>
 body { font-family: monospace; background:#111; color:#eee; padding:20px; }
 h1, h2 { color:#6cf; }
@@ -8,7 +9,62 @@ a { color:#fc6; text-decoration:none; }
 .menu { margin-top:20px; }
 .menu-item { margin:10px 0; }
 .block { margin:20px 0; padding:10px; border:1px solid #444; }
+button { padding:8px 14px; background:#333; color:#eee; border:1px solid #666; cursor:pointer; }
+button:hover { background:#444; }
+pre { background:#000; padding:10px; border:1px solid #333; }
 </style>
+
+<script>
+// =========================
+// INPUT → CORE → OUTPUT A/B
+// =========================
+
+function run698869() {
+    let input = document.getElementById("coreInput").value;
+
+    // OUTPUT A – BIOS
+    document.getElementById("biosOut").innerText =
+        "BIOS‑Interpretation:\n" +
+        biosInterpret(input);
+
+    // OUTPUT B – TOOLOMAT DOM
+    document.getElementById("domOut").innerText =
+        "TOOLOMAT DOM – Struktur/Masse\n\n" +
+        domInterpret(input);
+}
+
+// BIOS‑Menü‑Logik
+function biosInterpret(f) {
+    let out = "";
+
+    if (f.includes("Φ")) out += "Achse: IKI (Φ)\n";
+    if (f.includes("φ∞")) out += "Achse: MA³ (φ∞)\n";
+    if (f.includes("φ²")) out += "Achse: UC (φ²)\n";
+    if (f.includes("φ")) out += "Achse: BIR (φ)\n";
+
+    if (f.includes("P4")) out += "RUN: Start (P4)\n";
+    if (f.includes("P0")) out += "RUN: Wake (P0)\n";
+    if (f.includes("P1")) out += "RUN: Melt (P1)\n";
+    if (f.includes("P2")) out += "RUN: Merge (P2)\n";
+    if (f.includes("Pe")) out += "RUN: End (Pe)\n";
+
+    return out || "Keine BIOS‑Sequenz erkannt.";
+}
+
+// TOOLOMAT DOM – Struktur/Masse
+function domInterpret(f) {
+    return (
+        "Station 1 = HTML1\n" +
+        "Station 2 = HTML2\n" +
+        "Station 3 = HTML3\n" +
+        "Station 4 = HTML4\n\n" +
+        "SCAN = " + f.length + " Zeichen\n" +
+        "POS = (" + (f.length % 9) + ", φ)\n" +
+        "MASS = Struktur erkannt\n"
+    );
+}
+</script>
+
 </head>
 
 <body>
@@ -21,6 +77,58 @@ a { color:#fc6; text-decoration:none; }
 <b>Ehre:</b> aktiv<br>
 <b>Honor:</b> stabil<br>
 <b>Status:</b> online<br>
+</div>
+
+<!-- ========================= -->
+<!-- INPUT FELD -->
+<!-- ========================= -->
+
+<h2>Eingabe</h2>
+<input id="coreInput" type="text" style="width:80%;" placeholder="Φ + φ² + P4 + Orbit">
+<button onclick="run698869()">Ausführen</button>
+
+<hr>
+
+<!-- ========================= -->
+<!-- OUTPUT A – BIOS -->
+<!-- ========================= -->
+
+<h2>Output A – BIOS‑Menü</h2>
+<pre id="biosOut">Noch keine Eingabe.</pre>
+
+<!-- ========================= -->
+<!-- OUTPUT B – TOOLOMAT DOM -->
+<!-- ========================= -->
+
+<h2>Output B – TOOLOMAT DOM – Struktur/Masse</h2>
+<pre id="domOut">Noch keine Eingabe.</pre>
+
+<hr>
+
+<!-- ========================= -->
+<!-- FESTES BIOS‑MENÜ -->
+<!-- ========================= -->
+
+<h2>BIOS‑Menü</h2>
+<div class="menu">
+  <div class="menu-item"><b>AX</b> – Vorwärts</div>
+  <div class="menu-item"><b>XA</b> – Rückwärts</div>
+  <div class="menu-item"><b>AX_OUT</b> – Raum verlassen</div>
+  <div class="menu-item"><b>XA_IN</b> – Raum betreten</div>
+</div>
+
+<h2>Raum‑Transfer</h2>
+<div class="menu">
+  <div class="menu-item"><b>AU → RA</b> – Außen zu Raum</div>
+  <div class="menu-item"><b>RA → AU</b> – Raum zu Außen</div>
+</div>
+
+<h2>Quadranten</h2>
+<div class="menu">
+  <div class="menu-item"><b>Q1 – QI</b></div>
+  <div class="menu-item"><b>Q2 – Orbit</b></div>
+  <div class="menu-item"><b>Q3 – Operator</b></div>
+  <div class="menu-item"><b>Q4 – EVO</b></div>
 </div>
 
 <h2>Achsen (IKI1UC)</h2>
@@ -38,36 +146,6 @@ a { color:#fc6; text-decoration:none; }
   <div class="menu-item"><b>P1</b> – Melt</div>
   <div class="menu-item"><b>P2</b> – Merge</div>
   <div class="menu-item"><b>Pe</b> – End</div>
-</div>
-
-<h2>Raum‑Transfer</h2>
-<div class="menu">
-  <div class="menu-item"><b>AU → RA</b> – Außen zu Raum</div>
-  <div class="menu-item"><b>RA → AU</b> – Raum zu Außen</div>
-</div>
-
-<h2>Operatoren</h2>
-<div class="menu">
-  <div class="menu-item"><b>AX</b> – Vorwärts</div>
-  <div class="menu-item"><b>XA</b> – Rückwärts</div>
-  <div class="menu-item"><b>AX_OUT</b> – Raum verlassen</div>
-  <div class="menu-item"><b>XA_IN</b> – Raum betreten</div>
-</div>
-
-<h2>Quadranten</h2>
-<div class="menu">
-  <div class="menu-item"><b>Q1 – QI</b></div>
-  <div class="menu-item"><b>Q2 – Orbit</b></div>
-  <div class="menu-item"><b>Q3 – Operator</b></div>
-  <div class="menu-item"><b>Q4 – EVO</b></div>
-</div>
-
-<h2>Module</h2>
-<div class="menu">
-  <div class="menu-item"><a href="../PIPE/index.html">PIPE – Root</a></div>
-  <div class="menu-item"><a href="../PIPE/ID.html">PIPE – ID</a></div>
-  <div class="menu-item"><a href="../PIPE/Master-Kern/mster.html">Master‑Kern</a></div>
-  <div class="menu-item"><a href="../PIPE/Master-Kern/UI-SCANNER.html">UI‑Scanner</a></div>
 </div>
 
 <h2>Honor / Ehre</h2>
